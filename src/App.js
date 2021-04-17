@@ -1,3 +1,4 @@
+import React, { createContext, useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -5,24 +6,36 @@ import {
   Route
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
+// import Appointment from './components/Appointment/Appointment/Appointment';
+import Login from './components/Login/Login/Login';
+// import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
-
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <Router>
-      <Switch>
-        <Route path="/about">
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <Switch>
+          <Route path="/appointment">
+            {/* <Appointment></Appointment> */}
+          </Route>
+          <Route path="/dashboard/appointment">
+            {/* <Dashboard></Dashboard> */}
+          </Route>
+          <Route path="/dashboard/allPatients">
 
-        </Route>
-        <Route path="/users">
-
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 
