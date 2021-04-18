@@ -1,33 +1,37 @@
 import React from 'react';
-import fluoride from '../../../images/fluoride.png';
-import cavity from '../../../images/cavity.png';
-import whitening from '../../../images/whitening.png';
+import python from '../../../images/python.jpg';
+import bootstrap from '../../../images/bootstrap.jpg';
+import javascript from '../../../images/javascript.jpg';
+import mongodb from '../../../images/mongodb.png';
+import firebase from '../../../images/firebase.png';
+import html5 from '../../../images/html5.png';
 import ServiceDetail from '../ServiceDetail/ServiceDetail';
 
 const serviceData = [
+    
     {
-        name: 'Fluoride Treatment',
-        img: fluoride
+        name: 'mongoDB',
+        img: mongodb
     },
     {
-        name: 'Cavity Filling',
-        img: cavity
+        name: 'Python',
+        img: python
     },
     {
-        name: 'Teeth Whitening',
-        img: whitening
+        name: 'BootStrap',
+        img: bootstrap
     },
     {
-        name: 'Teeth Whitening',
-        img: whitening
+        name: 'JavaScript',
+        img: javascript
     },
     {
-        name: 'Teeth Whitening',
-        img: whitening
+        name: 'Firebase',
+        img: firebase
     },
     {
-        name: 'Teeth Whitening',
-        img: whitening
+        name: 'HTML5',
+        img: html5
     }
 ]
 
@@ -35,7 +39,7 @@ const Services = () => {
     return (
         <section className="services-container mt-5 pt-5">
             <div className="text-center">
-                <h5 style={{color: '#1CC7C1'}}>OUR COURSES</h5>
+                <h1 style={{color: '#1CC7C1'}}>OUR COURSES</h1>
                 <h2>The world's largest selection of courses</h2>
             </div>
             <div className="d-flex justify-content-center">

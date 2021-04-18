@@ -7,7 +7,7 @@ const ServiceDetail = ({ service }) => {
         <div className="col-md-4 text-center services">
             <div class="service-box">
                 <div>
-                    <img style={{ height: '50px' }} src={service.img} alt="" />
+                    <img  className="image-container" src={service.img} alt="" />
                 </div>
                 <h5 className="mt-3 mb-3"><Link to="">{service.name}</Link></h5>
                 <p className="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?</p>
