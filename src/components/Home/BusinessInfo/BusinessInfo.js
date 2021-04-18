@@ -4,27 +4,21 @@ import { faClock, faMapMarker, faPhone } from '@fortawesome/free-solid-svg-icons
 
 const infosData = [
     {
-        title: 'Opening Hours',
-        description: 'We are open 7 days',
-        icon: faClock,
+        title: 'Call us now (9am-8pm)',
+        description: '+88 01796582287',
+        icon: faPhone,
         background: 'primary'
     },
     {
         title: 'Visit Our Location',
-        description: 'Brooklyn, NY 10003 USA',
+        description: 'Dhaka, City Capital Read-1200',
         icon: faMapMarker,
         background: 'dark'
-    },
-    {
-        title: 'Call us now',
-        description: '+15697854124',
-        icon: faPhone,
-        background: 'primary'
     }
 ]
 const BusinessInfo = () => {
     return (
-        <section className="d-flex justify-content-center">
+        <section style={{width: '100%'}} className="d-flex justify-content-center">
             <div className="w-75 row">
                 {
                     infosData.map(info => <InfoCard info={info} key={info.title}></InfoCard>)

@@ -26,3 +26,23 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+
+.btn-book {background-image: linear-gradient(to right, #556270 0%, #FF6B6B  51%, #556270  100%)}
+.btn-book {
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: rgb(0, 0, 0) !important;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+   font-size: 18px;
+ }
+
+ .btn-book:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff !important;
+   text-decoration: none;
+ }

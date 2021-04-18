@@ -9,9 +9,9 @@ const ServiceDetail = ({ service }) => {
                 <div>
                     <img style={{ height: '50px' }} src={service.img} alt="" />
                 </div>
-                <h5 className="mt-3 mb-3"><Link href="">{service.name}</Link></h5>
+                <h5 className="mt-3 mb-3"><Link to="">{service.name}</Link></h5>
                 <p className="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?</p>
-                <Link href="#" class="btn btn-success center-block mt-2 mb-2">Read More »</Link>
+                <Link to="#" class="btn btn-success center-block mt-2 mb-2">Read More »</Link>
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 .info-card{
-    padding: 0 5px;
+    padding: 70px 0;
+    
 }
 .info-primary{
     background-color: #1CC7C1;
@@ -10,6 +11,7 @@
 .info-container{
     height: 100px;
     padding:30px;
+    border-radius: 10px;
 }
 .info-icon{
     font-size: 3em;

@@ -6,6 +6,7 @@ import Teachers from '../Teachers/Teachers';
 import Testimonials from '../Testimonials/Testimonials';
 import Contact from '../Contact/Contact';
 import Footer from '../../Shared/Footer/Footer';
+import Feature from '../Feature/Feature';
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Header></Header>
             <Services></Services>
             <FeaturedService></FeaturedService>
+            <Feature></Feature>
             <Teachers></Teachers>
             <Testimonials></Testimonials>
             <Contact></Contact>
