@@ -10,28 +10,40 @@ import ServiceDetail from '../ServiceDetail/ServiceDetail';
 const serviceData = [
     
     {
-        name: 'mongoDB',
-        img: mongodb
+        title: 'mongoDB',
+        img: mongodb,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
+        price: '$99'
     },
     {
-        name: 'Python',
-        img: python
+        title: 'Python',
+        img: python,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
+        price: '$219'
     },
     {
-        name: 'BootStrap',
-        img: bootstrap
+        title: 'BootStrap',
+        img: bootstrap,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
+        price: '$250'
     },
     {
-        name: 'JavaScript',
-        img: javascript
+        title: 'JavaScript',
+        img: javascript,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
+        price: '$42'
     },
     {
-        name: 'Firebase',
-        img: firebase
+        title: 'Firebase',
+        img: firebase,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
+        price: '$86'
     },
     {
-        name: 'HTML5',
-        img: html5
+        title: 'HTML5',
+        img: html5,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
+        price: '$150'
     }
 ]
 

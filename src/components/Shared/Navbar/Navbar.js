@@ -24,16 +24,16 @@ const Navbar = () => {
                         <Link className="nav-link mr-5 font-weight-bold" to="/dashboard">Dashboard</Link>
                     </li>
                     <li className="nav-item active">
-                        <Link className="nav-link mr-5 font-weight-bold" to="/dashboard">Admin</Link>
+                        <Link className="nav-link mr-5 font-weight-bold" to="blogs">Blogs</Link>
                     </li>
                     <li className="nav-item active">
-                        <Link className="nav-link mr-5 font-weight-bold" to="#">Blogs</Link>
+                        <Link className="nav-link mr-5 font-weight-bold" to="contactUs">Contact Us</Link>
                     </li>
                     <li className="nav-item active">
-                        <Link className="nav-link mr-5 font-weight-bold" to="#">Contact Us</Link>
+                        <Link className="nav-link mr-5 font-weight-bold" to="/admin">Admin</Link>
                     </li>
                     <li className="nav-item active">
-                        <Link className="btn-book nav-link mr-5 font-weight-bold" to="/login">{loggedInUser?.email? loggedInUser.name || loggedInUser.displayName || loggedInUser.email: "Login"}</Link>
+                        <Link className="btn-book nav-link mr-5 font-weight-bold" to="/login">{loggedInUser?.email ? loggedInUser.name || loggedInUser.displayName || loggedInUser.email : "Login"}</Link>
                     </li>
                 </ul>
             </div>

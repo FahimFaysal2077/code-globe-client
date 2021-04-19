@@ -6,10 +6,12 @@ import {
   Route
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
-// import Appointment from './components/Appointment/Appointment/Appointment';
 import Login from './components/Login/Login/Login';
 import Navbar from './components/Shared/Navbar/Navbar';
-// import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import Transaction from './components/Transaction/Transaction/Transaction';
+import Admin from './components/Admin/Admin/Admin';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+
 
 export const UserContext = createContext();
 
@@ -22,11 +24,16 @@ function App() {
           <Route path="/appointment">
             {/* <Appointment></Appointment> */}
           </Route>
-          <Route path="/dashboard/appointment">
-            {/* <Dashboard></Dashboard> */}
-          </Route>
-          <Route path="/dashboard/allPatients">
-
+          <PrivateRoute path="/dashboard">
+            <Navbar></Navbar>
+            <Transaction></Transaction>
+          </PrivateRoute>
+          <PrivateRoute path="/admin">
+            <Navbar></Navbar>
+            <Admin></Admin>
+          </PrivateRoute>
+          <Route path="/addDoctor">
+            {/* <AddDoctor></AddDoctor> */}
           </Route>
           <Route path="/login">
             <Navbar></Navbar>
