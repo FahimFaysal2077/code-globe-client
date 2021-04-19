@@ -22,7 +22,7 @@ const AddService = () => {
         formData.append('serviceTitle', info.serviceTitle);
         formData.append('description', info.description);
 
-        fetch('http://localhost:5000/addService', {
+        fetch('https://sheltered-crag-04507.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })
