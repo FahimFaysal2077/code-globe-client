@@ -11,6 +11,7 @@ import Navbar from './components/Shared/Navbar/Navbar';
 import Transaction from './components/Transaction/Transaction/Transaction';
 import Admin from './components/Admin/Admin/Admin';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import AddService from './components/Admin/AddService/AddService';
 
 
 export const UserContext = createContext();
@@ -32,8 +33,9 @@ function App() {
             <Navbar></Navbar>
             <Admin></Admin>
           </PrivateRoute>
-          <Route path="/addDoctor">
-            {/* <AddDoctor></AddDoctor> */}
+          <Route path="/addServices">
+            <Navbar></Navbar>
+            <AddService></AddService>
           </Route>
           <Route path="/login">
             <Navbar></Navbar>

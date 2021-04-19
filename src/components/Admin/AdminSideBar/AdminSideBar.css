@@ -9,17 +9,21 @@
     display: inline-block;
     transform: translate(5px);
 }
+.sidebar svg{
+    margin-right: 5px;
+    width: 100px;
+}
 
 .logo-image-small {
     width: 40px;
 }
 
-.text-font-sidebar {
+.text-font-sidebar-2 {
     font-weight: 500;
     padding-left: 8px;
-    font-size: 22px;
-    color: crimson;
+    font-size: 19px;
+    color: rgb(0, 0, 0);
 }
-.text-font-sidebar:hover {
-    color: rgb(67, 20, 220);
+.text-font-sidebar-2:hover {
+    color: rgb(197, 20, 220);
 }
