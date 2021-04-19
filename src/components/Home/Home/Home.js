@@ -11,7 +11,7 @@ import Feature from '../Feature/Feature';
 
 const Home = () => {
     return (
-        <div style={{background: '#FFFFFF !important'}}>
+        <div>
             <Header></Header>
             <Services></Services>
             <FeaturedService></FeaturedService>
