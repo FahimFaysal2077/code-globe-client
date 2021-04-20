@@ -12,6 +12,7 @@ import Transaction from './components/Transaction/Transaction/Transaction';
 import Admin from './components/Admin/Admin/Admin';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import AddService from './components/Admin/AddService/AddService';
+import CustomerReview from './components/Transaction/CustomerReview/CustomerReview';
 
 
 export const UserContext = createContext();
@@ -22,9 +23,6 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-          <Route path="/appointment">
-            {/* <Appointment></Appointment> */}
-          </Route>
           <PrivateRoute path="/dashboard">
             <Navbar></Navbar>
             <Transaction></Transaction>
@@ -36,6 +34,10 @@ function App() {
           <Route path="/addServices">
             <Navbar></Navbar>
             <AddService></AddService>
+          </Route>
+          <Route path="/addReview">
+            <Navbar></Navbar>
+            <CustomerReview></CustomerReview>
           </Route>
           <Route path="/login">
             <Navbar></Navbar>

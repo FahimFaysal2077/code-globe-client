@@ -24,10 +24,10 @@ const Navbar = () => {
                         <Link className="nav-link mr-5 font-weight-bold" to="/dashboard">Dashboard</Link>
                     </li>
                     <li className="nav-item active">
-                        <Link className="nav-link mr-5 font-weight-bold" to="blogs">Blogs</Link>
+                        <Link className="nav-link mr-5 font-weight-bold" to="/blogs">Blogs</Link>
                     </li>
                     <li className="nav-item active">
-                        <Link className="nav-link mr-5 font-weight-bold" to="contactUs">Contact Us</Link>
+                        <Link className="nav-link mr-5 font-weight-bold" to="/contactUs">Contact Us</Link>
                     </li>
                     <li className="nav-item active">
                         <Link className="nav-link mr-5 font-weight-bold" to="/admin">Admin</Link>

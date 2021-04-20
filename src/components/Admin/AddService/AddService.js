@@ -1,64 +1,77 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useForm } from "react-hook-form";
+import './AddService.css';
 import AdminSideBar from '../AdminSideBar/AdminSideBar';
 
 const AddService = () => {
+    const { register, handleSubmit, watch, errors } = useForm();
+    const [imageURL, setImageURL] = useState(null);
 
-    const [info, setInfo] = useState({});
-    const [file, setFile] = useState(null);
-    const handleBlur = e => {
-        const newInfo = { ...info };
-        newInfo[e.target.name] = e.target.value;
-        setInfo(newInfo);
-    }
 
-    const handleFileChange = (e) => {
-        const newFile = e.target.files[0];
-        setFile(newFile);
-    }
-
-    const handleSubmit = () => {
-        const formData = new FormData()
-        formData.append('file', file);
-        formData.append('serviceTitle', info.serviceTitle);
-        formData.append('description', info.description);
-
-        fetch('https://sheltered-crag-04507.herokuapp.com/addService', {
+    const onSubmit = (data, e) => {
+        const bookData = {
+            serviceTitle: data.serviceTitle,
+            description: data.description,
+            price: data.price,
+            image: imageURL
+        };
+        const url = `http://localhost:5000/addCourse`
+        console.log(bookData);
+        fetch(url, {
             method: 'POST',
-            body: formData
+            headers: {
+                'content-types': 'application/json'
+            },
+            body: JSON.stringify(bookData)
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
+            .then(res => {
+                console.log('server side response', res)
+                e.target.reset()
             })
-            .catch(error => {
-                console.error(error)
+    };
+    const handleImageUpload = event => {
+        console.log(event.target.files[0]);
+        const imageData = new FormData();
+        imageData.set('key', '0069b2d641d6702c507985600c84134f');
+        imageData.append('image', event.target.files[0]);
+
+        axios.post('https://api.imgbb.com/1/upload', imageData)
+            .then(function (response) {
+                setImageURL(response.data.data.display_url);
             })
+            .catch(function (error) {
+                console.log(error);
+            });
+
     }
-
-
-
-
-
     return (
         <section className="container-fluid row">
             <AdminSideBar></AdminSideBar>
             <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
-                <h5 className="text-brand">Add a Doctor</h5>
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Service Title</label>
-                        <input onBlur={handleBlur} type="text" className="form-control" name="serviceTitle" placeholder="Service Title" />
+                <h5 className="text-brand">Add Courses</h5>
+                <form className="row g-2" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="col-md-6 mt-3">
+                        <label htmlFor="serviceTitle">Course Title</label>
+                        <br />
+                        <input name="serviceTitle" placeholder="Enter Title Name" ref={register} type="text" ClassName="form-control" id="serviceTitle" required />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputPassword1">Description</label>
-                        <input onBlur={handleBlur} type="text" className="form-control" name="description" placeholder="Description" />
+                    <div className="col-md-6 mt-3">
+                        <label htmlFor="description">Description</label>
+                        <br />
+                        <input name="description" placeholder="Enter Description" ref={register} type="text" ClassName="form-control" id="description" required />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputPassword1">Upload a image</label>
-                        <input onChange={handleFileChange} type="file" className="form-control" id="exampleInputPassword1" placeholder="Picture" />
+                    <div className="col-md-6 mt-3">
+                        <label htmlFor="price">Add Price</label>
+                        <br />
+                        <input name="price" placeholder="Price" ref={register} type="text" ClassName="form-control" id="price" required />
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <div className="form-group mt-4">
+                        <label for="exampleFormControlFile1">Upload a image</label>
+                        <input type="file" className="form-control-file" onChange={handleImageUpload} id="exampleFormControlFile1" required />
+                    </div>
                 </form>
+                <button type="submit" className="col-md-1 add-book-btn-input">Submit</button>
             </div>
         </section>
     );

@@ -11,11 +11,13 @@ const ServiceDetail = ({ service }) => {
         history.push(url);
     }
 
+    
+
     return (
         <div className="col-md-4 text-center services">
             <div class="service-box">
                 <div>
-                    <img  className="image-container" src={service.img} alt="" />
+                    <img className="image-container" src={service.img} alt="" />
                 </div>
                 <h5 className="mt-3 mb-3"><Link to="">{service.title}</Link></h5>
                 <p className="text-secondary">{service.description}</p>

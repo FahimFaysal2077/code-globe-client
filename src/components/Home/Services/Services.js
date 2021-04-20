@@ -1,53 +1,16 @@
-import React from 'react';
-import python from '../../../images/python.jpg';
-import bootstrap from '../../../images/bootstrap.jpg';
-import javascript from '../../../images/javascript.jpg';
-import mongodb from '../../../images/mongodb.png';
-import firebase from '../../../images/firebase.png';
-import html5 from '../../../images/html5.png';
+import React, { useEffect, useState } from 'react';
 import ServiceDetail from '../ServiceDetail/ServiceDetail';
 
-const serviceData = [
-    
-    {
-        title: 'mongoDB',
-        img: mongodb,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
-        price: '$99'
-    },
-    {
-        title: 'Python',
-        img: python,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
-        price: '$219'
-    },
-    {
-        title: 'BootStrap',
-        img: bootstrap,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
-        price: '$250'
-    },
-    {
-        title: 'JavaScript',
-        img: javascript,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
-        price: '$42'
-    },
-    {
-        title: 'Firebase',
-        img: firebase,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
-        price: '$86'
-    },
-    {
-        title: 'HTML5',
-        img: html5,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quaerat?',
-        price: '$150'
-    }
-]
 
 const Services = () => {
+    const [services, setServices] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/services')
+        .then(res => res.json())
+        .then(data => setServices(data))
+    }, [])
+
     return (
         <section className="services-container mt-5 pt-5">
             <div className="text-center">
@@ -57,7 +20,7 @@ const Services = () => {
             <div className="d-flex justify-content-center">
             <div className="w-75 row">
                 {
-                    serviceData.map(service => <ServiceDetail service={service} key={service.name}></ServiceDetail>)
+                    services.map(service => <ServiceDetail service={service} key={service.name}></ServiceDetail>)
                 }
             </div>
         </div>
