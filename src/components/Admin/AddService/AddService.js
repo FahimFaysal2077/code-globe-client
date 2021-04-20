@@ -16,7 +16,7 @@ const AddService = () => {
             price: data.price,
             image: imageURL
         };
-        const url = `http://localhost:5000/addCourse`
+        const url = `https://sheltered-crag-04507.herokuapp.com/addCourse`
         console.log(bookData);
         fetch(url, {
             method: 'POST',

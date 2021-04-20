@@ -16,7 +16,7 @@ const CustomerReview = () => {
             address: data.address,
             image: imageURL
         };
-        const url = `http://localhost:5000/addReview`
+        const url = `https://sheltered-crag-04507.herokuapp.com/addReview`
         console.log(bookData);
         fetch(url, {
             method: 'POST',
