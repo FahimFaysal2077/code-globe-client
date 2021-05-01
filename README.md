@@ -29,5 +29,5 @@ https://code-globe.web.app/
 *Feature etc.
 
 
-####	Technologies:
+#### Technologies:
 JavaScript(ES6), React.Js, Node.Js, MongoDB, Firebase Authentication, React Bootstrap, Font-Awesome, React Login-Icon, Heroku, React Router, etc.
