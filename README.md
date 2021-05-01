@@ -31,3 +31,10 @@ https://code-globe.web.app/
 
 #### Technologies:
 JavaScript(ES6), React.Js, Node.Js, MongoDB, Firebase Authentication, React Bootstrap, Font-Awesome, React Login-Icon, Heroku, React Router, etc.
+
+
+## Resume Link:
+ https://ready-rides-bangladesh.web.app/
+ 
+## Linkedin Link:
+ https://ready-rides-bangladesh.web.app/
